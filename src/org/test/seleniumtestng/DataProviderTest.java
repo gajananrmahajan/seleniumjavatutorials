@@ -1,5 +1,7 @@
 package org.test.seleniumtestng;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
@@ -29,6 +31,8 @@ public class DataProviderTest {
   @BeforeClass
   public void beforeClass() {
     driver = new FirefoxDriver();
+    driver.manage().window().maximize();
+    driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
   }
 
   @AfterClass
